@@ -15,7 +15,6 @@
 #include <dirent.h>
 #include <seqan/seq_io.h>
 #include <boost/range/irange.hpp>
-#include "bisquick.h"
 #include "bisquick_index.h"
 #include "utils.h"
 #include "reads_processing.h"
