@@ -6,7 +6,7 @@
  *  the hash map index
  *
  * @version 0.1
- * @date 20/11/2018
+ * @date 11/11/2019
  * @author Luis Enrique Ramirez Chavez
  * @bug No known bugs.
  */

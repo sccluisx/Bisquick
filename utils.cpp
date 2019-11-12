@@ -1,5 +1,5 @@
 //
-// Created by lramirez on 14.11.18.
+// Created by lramirez on 11.11.18.
 //
 #include <seqan/bed_io.h>
 #include <boost/lexical_cast.hpp>
@@ -18,11 +18,11 @@ parseCommandLine(std::shared_ptr<BisquickOptions> bisquickOptions, int argc, cha
     // Set short description, version, and date.
     setShortDescription(parser, "Bisquick");
     setVersion(parser, "0.1");
-    setDate(parser, "October 2018");
+    setDate(parser, "November 2019");
 
     // Define usage line and long description.
     addUsageLine(parser,
-                 "[\\fIOPTIONS\\fP] \"\\fITEXT\\fP\"");
+                 "[\\fIOPTIONS\\fP]");
     addDescription(parser,
                    "Bisulfite analysis as fast as baking a pie! ");
 

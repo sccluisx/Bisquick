@@ -1,5 +1,5 @@
 //
-// Created by lramirez on 06.11.19.
+// Created by lramirez on 11.11.19.
 //
 
 #include <boost/range/irange.hpp>
@@ -13,7 +13,6 @@ extern std::unordered_map<seqan::DnaString, std::vector<map_value>, DnaStringHas
 extern std::unordered_map<unsigned, unsigned> cgpos2index;
 
 int process_reads() {
-    // std::cout<<"Reads file:"<<bisquickOptions->readsfile<<std::endl;
     seqan::CharString seqFileName = bisquickOptions->readsfile;
     seqan::SeqFileIn seqFileIn;
     if (!seqan::open(seqFileIn, seqan::toCString(seqFileName))) {

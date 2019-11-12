@@ -1,7 +1,7 @@
 /**
  * @file utils.h
  * @version 0.1
- * @date 20/11/2018
+ * @date 11/11/2019
  * @author Luis Enrique Ramirez Chavez
  * @title Utility functions and structures
  */

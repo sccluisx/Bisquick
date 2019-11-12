@@ -3,7 +3,7 @@
  *  @brief Main code of bisquick
  *  This function contains the main() function of bisquick
  * @version 0.1
- * @date 20/11/2018
+ * @date 11/11/2019
  * @author Luis Enrique Ramirez Chavez
  * @bug No known bugs.
  */
@@ -27,11 +27,10 @@ extern std::unordered_map<seqan::DnaString, std::vector<map_value>, DnaStringHas
 
 
 int main(int argc, char const **argv) {
-
     std::string output_sum_file(seqan::toCString(bisquickOptions->output));
-    output_sum_file+="_summary_file_k_";
-    output_sum_file+=std::to_string(bisquickOptions->kmersize);
-    output_sum_file+=".txt";
+    output_sum_file += "_summary_file_k_";
+    output_sum_file += std::to_string(bisquickOptions->kmersize);
+    output_sum_file += ".txt";
     OutputAndConsole t1(output_sum_file);
 
     c_id_counter = 0;
@@ -42,20 +41,17 @@ int main(int argc, char const **argv) {
     // Otherwise, exit with code 0 (e.g. help was printed).
     if (parsecmdln != seqan::ArgumentParser::PARSE_OK)
         return parsecmdln == seqan::ArgumentParser::PARSE_ERROR;
-    std::cout  << "|||Bisquick - fast methylation estimates|||" << std::endl;
-    std::cout  << "Bisquick options:" << std::endl;
-
-    std::cout  << "Kmer Size: " << bisquickOptions->kmersize << std::endl;
-
-    std::cout  << "Genome directory: "<< seqan::toCString(bisquickOptions->genomePath) << std::endl;
-
-    std::cout  << "Reads directory: " << seqan::toCString(bisquickOptions->readsfile) << std::endl;
+    std::cout << "|||Bisquick - fast methylation estimates|||" << std::endl;
+    std::cout << "Bisquick options:" << std::endl;
+    std::cout << "Kmer Size: " << bisquickOptions->kmersize << std::endl;
+    std::cout << "Genome directory: " << seqan::toCString(bisquickOptions->genomePath) << std::endl;
+    std::cout << "Reads directory: " << seqan::toCString(bisquickOptions->readsfile) << std::endl;
 
 
     auto fastafile = open_directory(seqan::toCString(bisquickOptions->genomePath));
     double start = seqan::cpuTime();
     create_index(fastafile);
-    std::cout  << "Index built" << std::endl;
+    std::cout << "Index built" << std::endl;
 
     std::cout << "Processing reads" << std::endl;
 
@@ -74,13 +70,14 @@ int main(int argc, char const **argv) {
     double total_meth_ratio = 0;
     for (ulong i = 0; i < cg_index->methylated.size(); ++i) {
         if (cg_index->methylated[i] + cg_index->unmethylated[i] > 0) {
-            cg_index->meth_ratio[i] = (double)cg_index->methylated[i] / (double)(cg_index->methylated[i] + cg_index->unmethylated[i]);
+            cg_index->meth_ratio[i] =
+                    (double) cg_index->methylated[i] / (double) (cg_index->methylated[i] + cg_index->unmethylated[i]);
             total_meth_ratio += cg_index->meth_ratio[i];
-            cpgs_covered=cpgs_covered+1;
+            cpgs_covered = cpgs_covered + 1;
         }
     }
-    std::cout << "total meth ratio: " << total_meth_ratio/cpgs_covered << std::endl;
-    std::cout << "total cpgs covered: " << cpgs_covered/cg_index->methylated.size() << std::endl;
+    std::cout << "total meth ratio: " << total_meth_ratio / cpgs_covered << std::endl;
+    std::cout << "total cpgs covered: " << cpgs_covered / cg_index->methylated.size() << std::endl;
     output_write_bed_file();
     double end = seqan::cpuTime();
     std::cout.precision(17);
