@@ -67,4 +67,5 @@ In this case we are running bisquick with a 50-mer as parameter and bisquick wil
 * a BED file containing the methylation rate of every CpG position of the genome reference following the format
 
 `<chromosome>  <start position> <end position> <methylation percentage>`
+
 This BEDfile can be used to produce a bedgraph in the genome browser of the UCSC and visualize it in a [custom track](https://genome.ucsc.edu/cgi-bin/hgCustom "genome browser")
