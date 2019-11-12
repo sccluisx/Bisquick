@@ -329,9 +329,7 @@ int main2(int argc, char const ** argv)
 }
 
 /*
-//
-// Created by lramirez on 20.11.18.
-//
+////
 
 #include <iostream>
 #include <algorithm>
