@@ -13,6 +13,8 @@ set(CMAKE_BUILD_TYPE DebugValgrind)
 set(CMAKE_CXX_FLAGS_DebugValgrind "-g -O0 -fno-inline -Wall")
 set(CMAKE_CXX_FLAGS_DEBUG "-g")
 set(CMAKE_CXX_FLAGS_RELEASE "-O3")
+set(CMAKE_DISABLE_VER -DCMAKE_CXX_ARGS="-DSEQAN_DISABLE_VERSION_CHECK=YES")
+
 # Name of project and that it is C++ only.
 project (bisqck CXX)
 
@@ -38,7 +40,7 @@ include_directories (${SEQAN_INCLUDE_DIRS} ${BOOST_INCLUDE_PATH})
 add_definitions (${SEQAN_DEFINITIONS})
 
 # Add CXX flags found by find_package (SeqAn).
-set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${SEQAN_CXX_FLAGS}")
+set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${SEQAN_CXX_FLAGS} ${CMAKE_DISABLE_VER}")
 
 # Add executable and link against SeqAn dependencies.
 add_executable (bisquick main.cpp utils.h utils.cpp bisquick_index.cpp bisquick_index.h reads_processing.cpp reads_processing.h)
