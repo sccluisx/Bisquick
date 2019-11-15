@@ -76,6 +76,7 @@ int main(int argc, char const **argv) {
             cpgs_covered = cpgs_covered + 1;
         }
     }
+
     std::cout << "total meth ratio: " << total_meth_ratio / cpgs_covered << std::endl;
     std::cout << "total cpgs covered: " << cpgs_covered / cg_index->methylated.size() << std::endl;
     output_write_bed_file();
@@ -84,4 +85,3 @@ int main(int argc, char const **argv) {
     std::cout << "Execution time: " << end - start << std::endl;
     return 0;
 }
-

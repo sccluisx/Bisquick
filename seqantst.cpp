@@ -42,7 +42,7 @@ void write_bed(){
 
 }
 
-int main(int argc, char const ** argv) {
+int main_output(int argc, char const ** argv) {
     OutputAndConsole file("output.txt");
     file << "test" ;
     return  0;
@@ -164,7 +164,7 @@ int mainallreads(int argc, char const **argv){
     return 0;
 }
 
-int mainxor(int argc, char const **argv){
+int main(int argc, char const **argv){
     double start = seqan::cpuTime();
     DnaString seqFileName1 = "ACGT";
     DnaString seqFileName2 = "CAGT";

@@ -75,9 +75,9 @@ int create_index(std::vector<std::string> fastafile) {
             beg = 0;
         for (auto i : boost::irange(beg, end)) {
             seqan::CharString ckmer = infixWithLength(seq, i, bisquickOptions->kmersize);
-            std::vector<int> cpg_list = find_cpgs(ckmer);
+            std::vector<int> cpg_list = find_cpgs(ckmer); // get all cpg positions with in the kmer
             map_value mapval = {
-                    .beg = i,
+                    .beg = i, //position
                     .cpg_pos = cpg_list,
                     .sense = true,
             };
@@ -92,7 +92,7 @@ int create_index(std::vector<std::string> fastafile) {
             }
         }
     }
-    int numclash, maxclash = 0;
+    long numclash, maxclash = 0;
     seqan::DnaString maxclashstr;
     for (auto itr = compKMap.begin(); itr != compKMap.end(); ++itr) {
         if (itr->second.size() > 1)

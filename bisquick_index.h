@@ -29,12 +29,12 @@
 
 
 typedef struct {
-    seqan::CharString seq_id;
-    std::vector<int>position_seq;
-    std::vector<int>c_id;
-    std::vector<int>methylated;
-    std::vector<int>unmethylated;
-    std::vector<double> meth_ratio;
+    seqan::CharString seq_id; // sequence id of the genome
+    std::vector<int>position_seq; // vector of cpg position in the genome
+    std::vector<int>c_id; // a unique ordered number of the cpg
+    std::vector<int>methylated;  // #number of methylated occurrences
+    std::vector<int>unmethylated; // #number of methylated occurrences
+    std::vector<double> meth_ratio; // #methylation ratio of the cpg
 } CG_Index;
 
 // intervals_index is the index to map all the intervals
