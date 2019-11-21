@@ -25,6 +25,7 @@ Bisquick is designed for linux64 platform.
 >  Could not find a package configuration file provided by "SeqAn" with any of the following names:  
 > -SeqAnConfig.cmake  
 > -seqan-config.cmake  
+
 Set the SeqAn_DIR variable to the cmake of the seqan library  
 `export SeqAn_DIR=Bisquick/libs/seqan/share/cmake/seqan`
 
