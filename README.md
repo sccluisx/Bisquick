@@ -21,11 +21,11 @@ Bisquick is designed for linux64 platform.
 4. Execute Cmake `cmake -DCMAKE_BUILD_TYPE=Release ..`
 5. Compile the code `make`
 
-**Note:** If compilation complains that couldnt find seqan package configuration
-    SeqAnConfig.cmake
-    seqan-config.cmake
- Set the SeqAn_DIR variable to the cmake of the seqan library
-export SeqAn_DIR=Bisquick/libs/seqan/share/cmake/seqan
+**Note:** If compilation complains that couldnt find seqan package configuration.
+-SeqAnConfig.cmake
+-seqan-config.cmake
+Set the SeqAn_DIR variable to the cmake of the seqan library
+`export SeqAn_DIR=Bisquick/libs/seqan/share/cmake/seqan`
 
 ### Usage
 
